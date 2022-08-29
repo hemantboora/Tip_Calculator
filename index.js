@@ -5,9 +5,19 @@ function myfun(){
     let bill=document.getElementById("bill").value;
     let tip=document.getElementById("tip").value;
     let person=document.getElementById("person").value;
-    bill=Number(bill);
-    tip=Number(tip);
-    person=Number(person);
+    if(bill===''|| tip===''|| person==='')
+    {
+        alert("Enter valid no.")
+    }
+    else if(bill<0||tip<0||person<=0)
+    {
+        alert("Enter the vaild value only")
+    }
+    else
+    {
+        tip=Number(tip);
+        bill=Number(bill);
+        person=Number(person);
     let totalBill=((bill*tip)/100)+bill;
     
     let perPerson=(bill*(tip/100))/person;
@@ -18,5 +28,6 @@ function myfun(){
     
     
     document.getElementById("TotalOutput").value="TotalBill "+totalBill+" Rs";
+    }
 }
 
